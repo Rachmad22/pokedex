@@ -25,7 +25,7 @@ function Home() {
   useEffect(() => {
     async function fetchAllPokemon() {
       try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
+        const response = await fetch(`${process.env.REACT_APP_URL_BACKEND}/pokemon?limit=100`);
         const data = await response.json();
         setAllPokemon(data.results);
         setFilteredPokemon(data.results);
